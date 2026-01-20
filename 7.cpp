@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
 
-int main() {
-    int a = 5;
-    int& ref = a; // referencia
-    int* p = &a; // puntero
+void incrementar(int* p) {
+    (*p)++;
+}
 
-    ref = 10;
-    cout << a << " " << *p << endl; // ambos muestran 10
+int main() {
+    int x = 7;
+    incrementar(&x);
+    cout << x << endl; // 8
 }
