@@ -6,7 +6,38 @@ int resta(int a, int b) { return a - b; }
 int mult(int a, int b) { return a * b; }
 
 /*
-int *f(int,int);    //  función que retorna int*
+int* f(int,int);    //  función que retorna int* una direccion
+
+    #include <iostream>
+    using namespace std;
+
+    int global_array[] = {10, 20, 30, 40, 50};
+
+    // Caso 1: Función que retorna un PUNTERO (int*)
+    // Busca el número 'target' y devuelve su dirección
+    int* buscar(int target) {
+        for(int i = 0; i < 5; i++) {
+            if(global_array[i] == target) {
+                return &global_array[i]; // Retorna la DIRECCIÓN del elemento
+            }
+      }
+        return nullptr; // Si no lo encuentra, devuelve nulo
+    }
+
+    int main() {
+        // Llamamos a la función
+        int* p = buscar(30); 
+
+        if(p != nullptr) {
+            cout << "Encontrado: " << *p << endl; // Imprime 30
+
+            // ¡Magia! Como tengo la dirección, puedo modificar el original
+            *p = 999; 
+            cout << "Nuevo valor en el array: " << global_array[2]; // Imprime 999
+        }
+    }
+
+
 int (*f)(int,int);  //  puntero a función
 */
 

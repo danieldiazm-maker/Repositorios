@@ -4,15 +4,13 @@ using namespace std;
 int main() {
     int m[2][3] = {{1,2,3},{4,5,6}};
 
-    int (*p)[3] = m; //apunta a la direcion de valores
+    int (*p)[3] = m; //Apunta a un arreglo de tres enteros (Al solo poner m apunta al primer elemento {1,2,3})
 
-    for (int (*fila)[3] = p; fila < p + 2; ++fila) { //p representa direccion
+    for (int (*fila)[3] = p; fila < p + 2; ++fila) { //fila==Referencia del primer elemento
         for (int* col = *fila; col < *fila + 3; ++col) {//*fila es una direccion
             cout << *col << " "; //imprime el valor
         }
         cout << endl;
-        cout<<(*fila)[2];
-        cout<<endl;
     }
     
 }
