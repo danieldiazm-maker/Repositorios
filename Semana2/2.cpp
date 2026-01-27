@@ -22,9 +22,7 @@ int main() {
     while (*pm != '\0') { //*pm guarda un valor  
         cout << *pm; //me inrprime el valor de la direccion de pm
         pm++; //sube un byte a la direccion con lo cual el bucle falla
-        cout << "Nueva direccion de mensaje" << pm <<endl;
     }
-    cout << endl;
-
+    cout<<endl;
     return 0;
 }
